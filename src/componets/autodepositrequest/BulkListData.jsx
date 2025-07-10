@@ -8,6 +8,7 @@ import CtaSearch from "../custom-ui/CtaSearch";
 import CtaTable from "../custom-ui/CtaTable";
 import Icons from "../common/Icons";
 import UpdateBulkDesposit from "./UpdateBulkDesposit";
+import InputWithLabelSub from "../custom-ui/InputWithLabelSub";
 
 const banks = [
     {
@@ -64,7 +65,7 @@ const columns = [
     "BANK NAME",
     "FILE TYPE",
     "COLUMNS",
-    { label: "ACTION", className: "text-end pe-10" },
+    { label: "ACTION", },
 ];
 
 const BulkListData = () => {
@@ -155,66 +156,49 @@ const BulkListData = () => {
 
     return (
         <div >
-            <div className="py-7 md:py-8 lg:py-10 flex flex-col gap-4 sm:flex-row w-full justify-between sm:items-center">
+            <div className="py-7 md:py-8 lg:py-10 flex flex-col gap-4 xl:flex-row w-full justify-between xl:items-center">
                 <div>
                     <p className='text-lg md:text-xl text-black font-medium leading-100'>
-                        Update Bulk Deposit Configuration
+                        Bulk Deposit
                     </p>
                     <p className='text-sm md:text-base font-normal text-black/70 leading-100 pt-1'>
                         Here you can upload statements for bulk deposit.
                     </p>
                 </div>
-                <button onClick={() => setUpdateBulkDespositData(true)} className='text-sm md:text-base py-2 cursor-pointer rounded-[10px] px-4 bg-purple flex items-center gap-5 text-white hover:opacity-85 max-w-max'>
-                    Add New
-                    <Icons icon={"puls"} />
-                </button>
+                <div className="flex gap-4 sm:gap-5 flex-col sm:flex-row">
+                    <button className="cursor-pointer max-w-max max-sm:h-10 text-nowrap bg-white text-sm flex gap-1 items-center leading-100 md:text-base font-medium py-2 border md:py-2.5 rounded-[10px] border-black text-black px-3 md:px-4">
+                        Custom Sheet Status
+                    </button>
+                    <button onClick={() => setUpdateBulkDespositData(true)} className='text-sm text-nowrap md:text-base py-2 cursor-pointer rounded-[10px] px-4 bg-purple flex items-center gap-5 text-white hover:opacity-85 max-w-max'>
+                        Add Custom Sheet
+                        <Icons icon={"puls"} />
+                    </button>
+                </div>
             </div>
-
-            {/* Filters */}
-            <div className="flex flex-wrap gap-y-2.5 md:gap-y-5 gap-5">
-                <CtaDropDown
-                    data={uniqueBanks}
-                    value={tempBankFilter}
-                    onChange={setTempBankFilter}
-                    placeholder="Bank Name"
-                    dropdownRef={bankDropdownRef}
-                />
-                <CtaDropDown
-                    data={uniqueFileTypes}
-                    value={tempFileTypeFilter}
-                    onChange={setTempFileTypeFilter}
-                    placeholder="File Type"
-                    dropdownRef={fileTypeDropdownRef}
-                />
-                <CtaDropDown
-                    data={uniqueStatuses}
-                    value={tempStatusFilter}
-                    onChange={setTempStatusFilter}
-                    placeholder="Status"
-                    dropdownRef={statusDropdownRef}
-                />
-                <CtaButton
-                    left
-                    className={`${loadClicked ? "bg-purple text-white" : "bg-purple text-white"}`}
-                    onClick={handleLoad}
-                    main
+            <div className="py-7 md:py-8 lg:py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                <InputWithLabelSub
+                    name="amountColumn"
+                    type="file"
+                    placeholder="Choose File"
                 >
-                    Load
-                </CtaButton>
-                <CtaButton left main onClick={handleReset}>Reset</CtaButton>
+                    Merchant Name
+                </InputWithLabelSub>
+                <InputWithLabelSub
+                    name="amountColumn"
+                    type="text"
+                    placeholder="INR"
+                >
+                    Currency
+                </InputWithLabelSub>
+                <InputWithLabelSub
+                    name="amountColumn"
+                    type="text"
+                    placeholder="********"
+                >
+                    Transaction Code
+                </InputWithLabelSub>
             </div>
 
-            {/* Search */}
-            <CtaSearch
-                addLink="/"
-                searchValue={tempSearchTerm}
-                placeholder="Search by bank name"
-                onChange={(e) => setTempSearchTerm(e.target.value)}
-                exportbutton
-                icons={"exportcsv"}
-            >
-                Export CSV
-            </CtaSearch>
 
             {/* Table */}
             <CtaTable
@@ -251,14 +235,9 @@ const BulkListData = () => {
                                 ))}
                             </div>
                         </td>
-                        <td className="text-end text-sm font-normal text-nowrap px-2.5 space-x-2">
-                            <button className="text-sm text-[#4B5563] cursor-pointer underline">Edit</button>
-                            <button
-                                onClick={() => setPopupBank(b.name)}
-                                className={`text-sm cursor-pointer underline ${popupBank === b.name ? "text-[#4B5563]/65" : "text-[#4B5563]"}`}
-                            >
-                                {popupBank === b.name ? "Enable" : "Disable"}
-                            </button>
+                        <td className="text-center text-sm font-normal text-nowrap px-2.5">
+                            <button className="text-sm text-[#4B5563] cursor-pointer underline">view</button>
+
                         </td>
                     </tr>
                 )}
@@ -271,11 +250,7 @@ const BulkListData = () => {
                 onPageChange={paginate}
             />
 
-            {updateBulkDespositData && (
-                <UpdateBulkDesposit updateBulkDespositData={updateBulkDespositData}
-                    setUpdateBulkDespositData={setUpdateBulkDespositData}
-                />
-            )}
+
         </div>
     );
 };

@@ -1,9 +1,11 @@
 import {
     APPROVER_ASSIGNMENTS_LINK,
     ASSIGNED_MERCHANTS_LINK,
+    AUTO_DEPOSIT_REQUEST_LINK,
     DASHBOARD_LINK,
     DEPOSIT_OVERVIEW_LINK,
     PAYMENT_REPORTS_LINK,
+    REPORTS_LINK,
     SETTINGS_LINK,
     UPLOAD_LOGS_LINK
 } from "./constant";
@@ -32,7 +34,7 @@ export const SIDEBAR_DATA_LIST = [
     {
         title: "Auto Deposit Request",
         icon: "deposit",
-        path: DEPOSIT_OVERVIEW_LINK,
+        path: AUTO_DEPOSIT_REQUEST_LINK,
     },
     {
         title: "Manual Deposit Request",
@@ -47,7 +49,7 @@ export const SIDEBAR_DATA_LIST = [
     {
         title: "Reports",
         icon: "depositsoverview",
-        path: DEPOSIT_OVERVIEW_LINK,
+        path: REPORTS_LINK,
     },
 
     {

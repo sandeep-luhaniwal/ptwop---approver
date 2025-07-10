@@ -37,7 +37,7 @@ const CtaTable = ({ columns = [], data = [], renderRow, showCheckbox = false, on
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="border-b border-[#E4E6E8]">
                         {data.map((item, i) => renderRow(item, i))}
                     </tbody>
                 </table>

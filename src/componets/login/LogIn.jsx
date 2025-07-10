@@ -64,13 +64,13 @@ const LogIn = () => {
         <div className="hidden md:flex justify-center items-center rounded-xl lg:rounded-[20px] w-full h-full bg-[url('/assets/images/svg/hero_bg.svg')] bg-center bg-no-repeat bg-cover">
           <div className="max-w-[640px] mx-auto p-4">
             <h2 className="text-2xl md:text-[26px] font-normal leading-100 lg:text-custom-36 text-white">
-              Welcome back, Super Admin 👋
+              Welcome back, Approver 👋
             </h2>
             <h1 className="text-white font-bold py-4 md:py-6 text-3xl md:text-4xl lg:text-custom-59">
-              Login to Your Admin Dashboard
+              Login to Your Approver Dashboard
             </h1>
             <p className="text-base lg:text-lg leading-[120%] font-normal text-white">
-              Monitor platform activity, manage roles, and oversee deposits and wallets from one central place.
+            Access pending deposit requests, upload bank and UPI details, and approve transactions securely — all in one streamlined dashboard.
             </p>
           </div>
         </div>
@@ -86,13 +86,13 @@ const LogIn = () => {
           {/* Mobile Welcome Text */}
           <div className="max-w-[640px] mx-auto md:hidden">
             <p className="text-lg pt-4 font-normal leading-100 text-black">
-              Welcome back, Super Admin 👋
+              Welcome back, Approver 👋
             </p>
             <h2 className="text-black font-bold py-3 md:py-6 text-2xl">
-              Login to Your Admin Dashboard
+              Login to Your Approver Dashboard
             </h2>
             <p className="text-xs lg:text-lg leading-[120%] font-normal text-black">
-              Monitor platform activity, manage roles, and oversee deposits and wallets from one central place.
+            Access pending deposit requests, upload bank and UPI details, and approve transactions securely — all in one streamlined dashboard.
             </p>
           </div>
 

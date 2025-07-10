@@ -1,5 +1,5 @@
 export const DASHBOARD_LINK = "/dashboard";
-export const USER_MERCHANTS_LINK = "/dashboard/user-merchants";
+export const REPORTS_LINK = "/dashboard/reports";
 export const USER_APPROVERS_LINK = "/dashboard/user-approvers";
 export const APPROVER_ASSIGNMENTS_LINK = "/dashboard/approver-assignments";
 export const UPLOAD_LOGS_LINK = "/dashboard/upload-logs";
@@ -7,7 +7,7 @@ export const DEPOSIT_OVERVIEW_LINK = "/dashboard/deposit-overview";
 export const AUTO_DEPOSIT_LINK = "/dashboard/auto-deposit";
 export const MANUAL_DEPOSIT_LINK = "/dashboard/manual-deposit";
 export const MANUAL_WITHDRAW_LINK = "/dashboard/manual-withdraw";
-export const BULK_DEPOSIT_LINK = "/dashboard/bulk-deposit";
+export const AUTO_DEPOSIT_REQUEST_LINK = "/dashboard/auto-deposit-request";
 export const PAYMENT_REPORTS_LINK = "/dashboard/payment-reports";
 export const SETTINGS_LINK = "/dashboard/settings";
 export const APPROVERS_LINK = "/dashboard/approvers";
