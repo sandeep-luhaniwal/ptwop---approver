@@ -6,108 +6,146 @@ import CtaDropDown from "../custom-ui/CtaDropDown";
 import CtaPagination from "../custom-ui/CtaPagination";
 import CtaSearch from "../custom-ui/CtaSearch";
 import CtaTable from "../custom-ui/CtaTable";
+import Image from "next/image";
 
 const approvers = [
   {
-    name: "Niropay",
-    merchant: "Rapidpay Solutions",
-    amount: "5,000",
-    credited: "5,000",
-    entryBy: "Inkatirl",
+    name: "Niroopay",
+    merchant: "C871ADIC",
+    provider: "UPI",
+    amount: "50,000",
+    credited: "50,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
+    entryBy: "Senura",
+    currency: "INR",
+    entryDate: "Mar 22, 2022, 13:00 PM",
+    paymentDate: "Mar 23, 2022, 13:00 PM",
+    status: "Success",
+  },
+  {
+    name: "Easypay",
+    merchant: "C871A3BD",
+    provider: "UPI",
+    amount: "10,000",
+    credited: "10,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
+    entryBy: "Senura",
+    currency: "INR",
+    entryDate: "Mar 22, 2022, 13:00 PM",
+    paymentDate: "Mar 23, 2022, 13:00 PM",
+    status: "Success",
+  },
+  {
+    name: "Safepay",
+    merchant: "C871A3BF",
+    provider: "Manual QR",
+    amount: "90,000",
+    credited: "90,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
+    entryBy: "Senura",
+    currency: "INR",
+    entryDate: "Mar 22, 2022, 13:00 PM",
+    paymentDate: "Mar 23, 2022, 13:00 PM",
+    status: "Failed",
+  },
+  {
+    name: "Safepay",
+    merchant: "C871ADA",
+    provider: "Bank Transfer",
+    amount: "75,000",
+    credited: "75,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
+    entryBy: "Senura",
+    currency: "INR",
+    entryDate: "Mar 22, 2022, 13:00 PM",
+    paymentDate: "Mar 23, 2022, 13:00 PM",
+    status: "Success",
+  },
+  {
+    name: "Outpay",
+    merchant: "C871A3DW",
+    provider: "Bank Transfer",
+    amount: "10,000",
+    credited: "10,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
+    entryBy: "Inkatrial",
     currency: "PKR",
     entryDate: "Mar 22, 2022, 13:00 PM",
     paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Active",
+    status: "Success",
   },
   {
-    name: "Goopay",
-    merchant: "QuickPay",
-    amount: "5,000",
-    credited: "5,000",
-    entryBy: "Senura",
+    name: "Rekopay",
+    merchant: "C871A9PY",
+    provider: "UPI",
+    amount: "90,000",
+    credited: "90,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
+    entryBy: "Inkatrial",
     currency: "INR",
     entryDate: "Mar 22, 2022, 13:00 PM",
     paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Active",
+    status: "Success",
   },
   {
-    name: "Apppay",
-    merchant: "FastPay Gateway",
-    amount: "5,000",
-    credited: "5,000",
-    entryBy: "Senura",
-    currency: "INR",
-    entryDate: "Mar 22, 2022, 13:00 PM",
-    paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Inactive",
-  },
-  {
-    name: "Viewpay",
-    merchant: "EasyPay",
-    amount: "5,000",
-    credited: "5,000",
-    entryBy: "Senura",
-    currency: "INR",
-    entryDate: "Mar 22, 2022, 13:00 PM",
-    paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Active",
-  },
-  {
-    name: "Portpay",
-    merchant: "SecurePay",
-    amount: "5,000",
-    credited: "5,000",
-    entryBy: "Inkatirl",
+    name: "Geepay",
+    merchant: "C871A8LT",
+    provider: "UPI",
+    amount: "50,000",
+    credited: "50,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
+    entryBy: "Inkatrial",
     currency: "PKR",
     entryDate: "Mar 22, 2022, 13:00 PM",
     paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Active",
+    status: "Failed",
   },
   {
-    name: "Surepay",
-    merchant: "FastPay Gateway",
-    amount: "5,000",
-    credited: "5,000",
-    entryBy: "Inkatirl",
-    currency: "INR",
-    entryDate: "Mar 22, 2022, 13:00 PM",
-    paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Active",
-  },
-  {
-    name: "Mejopay",
-    merchant: "Rapidpay Solutions",
-    amount: "5,000",
-    credited: "5,000",
-    entryBy: "Inkatirl",
-    currency: "PKR",
-    entryDate: "Mar 22, 2022, 13:00 PM",
-    paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Active",
-  },
-  {
-    name: "Apppay",
-    merchant: "EasyPay",
-    amount: "5,000",
-    credited: "5,000",
+    name: "Safepay",
+    merchant: "C871A5AL",
+    provider: "Manual QR",
+    amount: "75,000",
+    credited: "75,000",
+    utr: "0000504/428842",
+    remark: "NOT REC",
+    image: "/assets/images/png/screenshot_remak.png",
     entryBy: "Senura",
     currency: "INR",
     entryDate: "Mar 22, 2022, 13:00 PM",
     paymentDate: "Mar 23, 2022, 13:00 PM",
-    status: "Active",
-  },
+    status: "Success",
+  }
 ];
 
 const approverColumns = [
-  "APPROVER NAME",
-  "MERCHANT NAME",
+  "AGENT NAME",
+  "USER NAME",
+  "PROVIDER NAME",
   "AMOUNT",
   "CREDITED",
+  "UTR",
+  "IMAGE",
+  "REMARK",
   "ENTRY BY",
   "CURRENCY",
   "ENTRY DATE",
   "PAYMENT DATE",
   "STATUS",
+  "ACTION"
 ];
 
 const AutoDeposit = () => {
@@ -133,6 +171,8 @@ const AutoDeposit = () => {
   const uniqueMerchants = [...new Set(approvers.map((m) => m.merchant))];
   const uniqueStatuses = [...new Set(approvers.map((m) => m.status))];
   const uniqueEntryDates = [...new Set(approvers.map((m) => m.entryDate))];
+  const uniqueProviders = [...new Set(approvers.map((m) => m.provider))];
+  const uniqueEntryBy = [...new Set(approvers.map((m) => m.entryBy))];
 
   const handleLoad = () => {
     setApproverFilter(tempApproverFilter);
@@ -174,7 +214,9 @@ const AutoDeposit = () => {
       return matchesApprover && matchesMerchant && matchesStatus && inDateRange;
     })
     .filter((m) =>
-      m.name.toLowerCase().includes(tempSearchTerm.toLowerCase())
+      m.name.toLowerCase().includes(tempSearchTerm.toLowerCase()) ||
+      m.merchant.toLowerCase().includes(tempSearchTerm.toLowerCase()) ||
+      m.provider.toLowerCase().includes(tempSearchTerm.toLowerCase())
     );
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -209,17 +251,18 @@ const AutoDeposit = () => {
           placeholder="To Date"
         />
         <CtaDropDown
-          data={uniqueMerchants}
-          value={tempMerchantFilter}
-          onChange={setTempMerchantFilter}
+          data={uniqueNames}
+          value={tempApproverFilter}
+          onChange={setTempApproverFilter}
           placeholder="Agent Name"
         />
+
         <CtaDropDown
           data={uniqueStatuses}
           value={tempStatusFilter}
           onChange={setTempStatusFilter}
           icon={'flag'}
-          placeholder="All"
+          placeholder="Status"
         />
         <CtaButton
           left
@@ -238,7 +281,7 @@ const AutoDeposit = () => {
       <CtaSearch
         addLink="/"
         searchValue={tempSearchTerm}
-        placeholder="Search by approver name, assigned merchant"
+        placeholder="Search by agent name, user name, provider"
         onChange={(e) => setTempSearchTerm(e.target.value)}
         exportbutton
         icons={"exportcsv"}
@@ -273,15 +316,33 @@ const AutoDeposit = () => {
             </td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.name}</td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.merchant}</td>
+            <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.provider}</td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.amount}</td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.credited}</td>
+            <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.utr}</td>
+            <td className="text-sm text-nowrap text-center text-[#4B5563] px-2.5">
+              {m.image ? (
+                <Image
+                  src={
+                    m.image
+                  }
+                  alt={"screenshot"}
+                  width={20}
+                  height={20}
+                  className="inline-block shadow_img mx-auto"
+                />
+              ) : (
+                "---"
+              )}
+            </td>
+            <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.remark}</td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.entryBy}</td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.currency}</td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.entryDate}</td>
             <td className="text-sm text-nowrap text-[#4B5563] px-2.5">{m.paymentDate}</td>
             <td className="w-[100px] px-2.5 text-sm font-bold text-center">
               <span
-                className={`inline-block w-full px-2 py-1 rounded text-xs font-bold ${m.status === "Active"
+                className={`inline-block w-full px-2 py-1 rounded text-xs font-bold ${m.status === "Success"
                   ? "bg-[#EDFFEA] text-[#165E3D]"
                   : "bg-[#FFEAEA] text-[#B83131]"
                   }`}
@@ -289,10 +350,17 @@ const AutoDeposit = () => {
                 {m.status}
               </span>
             </td>
+            <td className="text-sm text-nowrap space-x-2 text-[#4B5563] px-2.5">
+              <button className="duration-300 cursor-pointer underline hover:text-purple-800">
+                Edit
+              </button>
+              <button className="duration-300 cursor-pointer underline hover:text-red-800">
+                Disable
+              </button>
+            </td>
           </tr>
         )}
       />
-
       <CtaPagination
         currentPage={currentPage}
         totalItems={filteredMerchants.length}

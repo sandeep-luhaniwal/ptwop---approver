@@ -1,7 +1,7 @@
 export const DASHBOARD_LINK = "/dashboard";
 export const REPORTS_LINK = "/dashboard/reports";
-export const USER_APPROVERS_LINK = "/dashboard/user-approvers";
-export const APPROVER_ASSIGNMENTS_LINK = "/dashboard/approver-assignments";
+export const DEPOSIT_LINK = "/dashboard/deposit";
+export const UPDATE_BULK_LINK = "/dashboard/update-bulk";
 export const UPLOAD_LOGS_LINK = "/dashboard/upload-logs";
 export const DEPOSIT_OVERVIEW_LINK = "/dashboard/deposit-overview";
 export const AUTO_DEPOSIT_LINK = "/dashboard/auto-deposit";

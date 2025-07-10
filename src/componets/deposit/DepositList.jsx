@@ -2,59 +2,57 @@
 
 import { useEffect, useRef, useState } from "react";
 import Icons from "../common/Icons";
-import CtaButton from "../custom-ui/CtaButton";
 import CtaPagination from "../custom-ui/CtaPagination";
 import CtaTable from "../custom-ui/CtaTable";
-import InputWithLabelSub from "../custom-ui/InputWithLabelSub";
 
 const banks = [
     {
         name: "RBI",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Disable",
+        status: "In Review",
     },
     {
         name: "SBI",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Disable",
+        status: "Declined",
     },
     {
         name: "PNB",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Enable",
+        status: "Succeeded",
     },
     {
         name: "UNION",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Disable",
+        status: "Succeeded",
     },
     {
         name: "AXIS",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Enable",
+        status: "Succeeded",
     },
     {
         name: "PATYM",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Disable",
+        status: "Succeeded",
     },
     {
         name: "KANRA",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Disable",
+        status: "Succeeded",
     },
     {
         name: "AXIS",
         fileType: "Excel",
         columns: ["Date", "Narration", "Amount", "Credit", "Debit", "Debit"],
-        status: "Disable",
+        status: "Succeeded",
     },
 ];
 
@@ -62,10 +60,10 @@ const columns = [
     "BANK NAME",
     "FILE TYPE",
     "COLUMNS",
-    { label: "ACTION", },
+    { label: "STATUS", },
 ];
 
-const BulkListData = () => {
+const DepositList = () => {
     const [tempBankFilter, setTempBankFilter] = useState("");
     const [tempFileTypeFilter, setTempFileTypeFilter] = useState("");
     const [tempStatusFilter, setTempStatusFilter] = useState("");
@@ -172,29 +170,7 @@ const BulkListData = () => {
                     </button>
                 </div>
             </div>
-            <div className="py-7 md:py-8 lg:py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-                <InputWithLabelSub
-                    name="amountColumn"
-                    type="file"
-                    placeholder="Choose File"
-                >
-                    Merchant Name
-                </InputWithLabelSub>
-                <InputWithLabelSub
-                    name="amountColumn"
-                    type="text"
-                    placeholder="INR"
-                >
-                    Currency
-                </InputWithLabelSub>
-                <InputWithLabelSub
-                    name="amountColumn"
-                    type="text"
-                    placeholder="********"
-                >
-                    Transaction Code
-                </InputWithLabelSub>
-            </div>
+
 
 
             {/* Table */}
@@ -232,17 +208,21 @@ const BulkListData = () => {
                                 ))}
                             </div>
                         </td>
-                        <td className="text-center text-sm font-normal text-nowrap px-2.5">
-                            <button className="text-sm text-[#4B5563] cursor-pointer underline">view</button>
-
+                        <td className="w-[120px] px-2.5 text-sm font-bold text-center">
+                            <span
+                                className={`inline-block w-full px-2 py-1 rounded text-xs font-bold ${b.status === "Succeeded"
+                                    ? "bg-[#EDFFEA] text-[#165E3D]"
+                                    : b.status === "In Review"
+                                        ? "bg-[#FFF6E9] text-[#B5850B]"
+                                        : "bg-[#FFEAEA] text-[#B83131]"
+                                    }`}
+                            >
+                                {b.status}
+                            </span>
                         </td>
                     </tr>
                 )}
             />
-
-            <div className="flex py-6 justify-end">
-                <CtaButton className={'bg-purple text-white'} main left>Save</CtaButton>
-            </div>
 
             <CtaPagination
                 currentPage={currentPage}
@@ -256,4 +236,4 @@ const BulkListData = () => {
     );
 };
 
-export default BulkListData;
+export default DepositList;
