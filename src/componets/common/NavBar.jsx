@@ -6,13 +6,10 @@ import Icons from './Icons';
 
 const titleMap = {
     "/dashboard": "Dashboard",
-    "/dashboard/merchants": "User Management",
-    "/dashboard/merchants/add-new-merchant": "Add New Merchant",
-    "/dashboard/approvers": "User Management",
-    "/dashboard/approvers/add-new-approvers": "Add New Approver",
-    "/dashboard/auto-deposit": "Auto Deposit Report",
-    "/dashboard/bulk-deposit": "Bulk Deposit Sheet",
+    "/dashboard/deposit": "Deposit",
+    "/dashboard/reports": "Auto Deposit Report",
     "/dashboard/payment-reports": "Payment Reports",
+    "/dashboard/assigned-merchants": "Assigned Merchants",
     "/dashboard/settings": "Setting",
 };
 
@@ -20,7 +17,7 @@ const NavBar = () => {
     const { setIsSideBarOpen } = useLayoutContext();
     const pathname = usePathname();
 
-    const pageTitle = titleMap[pathname] || "Dashboard";
+    const pageTitle = titleMap[pathname] || "Deposit";
     return (
         <div className='max-w-[1100px] 2xl:mx-auto min-[1441px]:max-w-[1200px] lg:py-4 lg:px-5 bg-white max-h-max w-full'>
             <div className="flex justify-between items-center md:gap-8  xl:gap-20">

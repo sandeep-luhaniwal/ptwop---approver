@@ -30,7 +30,7 @@ export const SIDEBAR_DATA_LIST = [
     {
         title: "Withdraw",
         icon: "withdraw",
-        path: UPLOAD_LOGS_LINK,
+        path: DASHBOARD_LINK,
     },
     {
         title: "Auto Deposit Request",
@@ -40,7 +40,7 @@ export const SIDEBAR_DATA_LIST = [
     {
         title: "Manual Deposit Request",
         icon: "deposit",
-        path: DEPOSIT_OVERVIEW_LINK,
+        path: DASHBOARD_LINK,
     },
     {
         title: "Manual Withdraw Request",
